@@ -1,0 +1,22 @@
+.drawer-container {
+        @apply bg-gray-200 bg-opacity-50 w-full h-full absolute top-0 flex justify-center;
+
+    .drawer {
+        @apply absolute right-0 bg-white w-[50%] top-0 h-full shadow-md overflow-y-scroll;
+    
+    .header {
+        @apply flex justify-between border-b;
+
+    .close button {
+            @apply text-4xl text-red-500 hover:opacity-75 duration-500 transform hover:rotate-12;
+        }
+    }
+    
+    .footer,
+    .header,
+    .body {
+        @apply m-3 p-3;
+    }
+    }
+
+}

@@ -1,0 +1,19 @@
+.modal-container {
+    @apply bg-gray-200 bg-opacity-50 w-full h-full absolute top-0 flex justify-center;
+}
+.modal {
+    @apply bg-white shadow-md hover:shadow-lg transform duration-500 rounded-lg space-y-5 z-50 absolute top-[20%] w-[50%];
+    .modal-header {
+        @apply flex justify-between border-b;
+    }
+    .modal-footer {
+        @apply border-t;
+    }
+    .close button {
+        @apply text-4xl text-red-500 hover:opacity-75 duration-500 transform hover:rotate-12;
+    }
+
+    .modal-footer, .modal-header, .modal-body {
+        @apply m-4 p-4;
+    }
+}
