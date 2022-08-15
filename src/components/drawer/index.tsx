@@ -1,6 +1,7 @@
 import "./style.scss";
 import React, { FC } from "react";
 import RenderIf from "../RenderIf";
+import useEscapeKey from "../../hooks/useEscapeKey";
 
 interface DrawerProps {
   isVisible: boolean;
@@ -9,6 +10,7 @@ interface DrawerProps {
   body?: React.ReactElement;
   footer?: React.ReactElement;
   closeable?: boolean;
+  closeOnEscape?: boolean;
 }
 
 const Drawer: FC<DrawerProps> = ({
@@ -18,7 +20,9 @@ const Drawer: FC<DrawerProps> = ({
   body,
   footer,
   closeable = true,
+  closeOnEscape = true,
 }) => {
+  useEscapeKey(onClose, closeOnEscape, closeable);
   return (
     <RenderIf condition={isVisible}>
       <div className="drawer-container">

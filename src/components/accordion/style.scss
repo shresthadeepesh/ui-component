@@ -1,0 +1,19 @@
+.accordion {
+    @apply flex flex-col;
+    .item {
+        @apply bg-white m-2 p-4 shadow-md hover:shadow-lg transform duration-500 ease-linear rounded-lg;
+        .header {
+            @apply flex justify-between justify-center items-center;
+            .title {
+                @apply text-xl;
+            }
+        }
+        .close button {
+            @apply text-4xl text-red-500 hover:opacity-75 duration-500 transform hover:rotate-12;
+        }
+
+        .content {
+            @apply py-4;
+        }
+    }
+}

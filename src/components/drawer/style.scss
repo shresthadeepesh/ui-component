@@ -2,7 +2,7 @@
         @apply bg-gray-200 bg-opacity-50 w-full h-full absolute top-0 flex justify-center;
 
     .drawer {
-        @apply absolute right-0 bg-white w-[50%] top-0 h-full shadow-md overflow-y-scroll;
+        @apply absolute right-0 bg-white md:w-[50%] w-[80%] top-0 h-full shadow-md overflow-y-scroll;
     
     .header {
         @apply flex justify-between border-b;

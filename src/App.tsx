@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import "./style.css";
+import "./style.scss";
 import Button from "./components/button";
 import Card from "./components/card";
 import Modal from "./components/modal";
 import Drawer from "./components/drawer";
+import Accordion from "./components/accordion";
 
 function App() {
   const [modal, setModal] = useState<boolean>(false);
@@ -29,8 +28,35 @@ function App() {
 
   return (
     <div className="App">
-      <Button onClick={handleOpen} title="Open Modal" />
-      <Button onClick={openDrawer} title="Open Drawer" />
+      <Button onClick={handleOpen} label="Open Modal" type="danger" />
+      <Button onClick={openDrawer} label="Open Drawer" />
+      <Button onClick={openDrawer} label="Open Drawer" type="ghost" />
+      <Button
+        onClick={openDrawer}
+        label="Open Drawer"
+        type="ghost"
+        size="small"
+      />
+      <Button
+        onClick={openDrawer}
+        label="Open Drawer"
+        type="ghost"
+        size="medium"
+      />
+      <Button
+        onClick={openDrawer}
+        label="Open Drawer"
+        type="ghost"
+        size="large"
+      />
+      <Accordion
+        openFirst={true}
+        item={[
+          { title: "Title 1", content: "Content 1" },
+          { title: "Title 2", content: "Content 2" },
+          { title: "Title 3", content: "Content 3" },
+        ]}
+      />
       <Card />
       <Modal
         isVisible={modal}
@@ -50,6 +76,7 @@ function App() {
         onClose={handleClose}
       />
       <Drawer
+        closeOnEscape={false}
         isVisible={drawer}
         header="Modal here..."
         body={

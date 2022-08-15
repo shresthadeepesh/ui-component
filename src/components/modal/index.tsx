@@ -1,6 +1,7 @@
 import "./style.scss";
 import React, { FC } from "react";
 import RenderIf from "../RenderIf";
+import useEscapeKey from "../../hooks/useEscapeKey";
 
 interface ModalProps {
   isVisible: boolean;
@@ -9,6 +10,7 @@ interface ModalProps {
   body?: React.ReactElement;
   footer?: React.ReactElement;
   closeable?: boolean;
+  closeOnEscape?: boolean;
 }
 
 const Modal: FC<ModalProps> = ({
@@ -18,7 +20,9 @@ const Modal: FC<ModalProps> = ({
   body,
   footer,
   closeable = true,
+  closeOnEscape = true,
 }) => {
+  useEscapeKey(onClose, closeOnEscape, closeable);
   return (
     <RenderIf condition={isVisible}>
       <div className="modal-container">
