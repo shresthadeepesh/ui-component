@@ -1,5 +1,5 @@
 .btn {
-    @apply m-2 transform duration-500 rounded-lg;
+    @apply m-2 transform duration-500 outline-none border-0 hover:cursor-pointer;
 }
 
 .primary {
@@ -26,3 +26,14 @@
     @apply px-6 py-4 text-xl;
 }
 
+button:disabled {
+    @apply opacity-50 cursor-not-allowed hover:cursor-not-allowed;
+}
+
+.rounded {
+    @apply rounded-lg;
+}
+
+.circle {
+    @apply rounded-full;
+}

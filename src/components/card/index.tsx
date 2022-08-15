@@ -1,7 +1,7 @@
 import "./style.css";
 import React from "react";
 
-const Card = () => {
+export const Card = () => {
   return (
     <div className="card">
       <div className="card-header"></div>

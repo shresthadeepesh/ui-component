@@ -3,17 +3,41 @@ import React, { FC } from "react";
 import RenderIf from "../RenderIf";
 import useEscapeKey from "../../hooks/useEscapeKey";
 
-interface ModalProps {
+export interface ModalProps {
+  /**
+   * Should the modal be visible?
+   */
   isVisible: boolean;
+  /**
+   * What the modal should do when closed?
+   */
   onClose: () => void;
+  /**
+   * Modal header
+   */
   header?: React.ReactElement | string;
+  /**
+   * Modal contents
+   */
   body?: React.ReactElement;
+  /**
+   * Modal Footer
+   */
   footer?: React.ReactElement;
+  /**
+   * Should the modal be closeable?
+   */
   closeable?: boolean;
+  /**
+   * Should the modal be close on pressing escape?
+   */
   closeOnEscape?: boolean;
 }
 
-const Modal: FC<ModalProps> = ({
+/**
+ * A Modal for popping out.
+ */
+export const Modal: FC<ModalProps> = ({
   isVisible,
   onClose,
   header,
